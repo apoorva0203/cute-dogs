@@ -15,7 +15,7 @@ const ImageList =  ({data}) => {
   }
   return (
     <>
-      <div class="h-[600px] overflow-scroll">
+      <div class="h-[600px] overflow-y-scroll scroll-smooth">
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-[3rem]">
           {data && data.map((item,i) =>(
             <ImageGrid key={i} item={item} i={i}/>

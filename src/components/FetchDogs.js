@@ -23,13 +23,13 @@ const FetchDogs = () => {
       setGreaterValue(true);
     }
   }
-  
+
   return (
     <>
       <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white m-8 shadow-xl">
         <CrudButton fetchNumber={fetchNumber}/>
       </div>
-      <div class="m-8 shadow-xl">
+      <div class="m-8 ">
         {!greaterValue && <ImageList data={images}/>}
         {greaterValue && <div>Max number returned is 50. More info <a href="https://github.com/ElliottLandsborough/dog-ceo-api/pull/3" class="text-blue-600">here.</a></div>}
       </div>
