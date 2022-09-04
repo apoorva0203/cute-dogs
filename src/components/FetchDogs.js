@@ -1,14 +1,28 @@
 import useStore from '../utils/store';
 import ImageList from './ImageList';
 import CrudButton from './CrudButton';
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const FetchDogs = () => {
   const data = useStore((state) => state.data);
   const fetchData = useStore((state) => state.fetch);
+  const [images, setImages] =useState([]);
+  const[greaterValue,setGreaterValue] = useState(false);
+  
+  useEffect(() => {
+      setImages(data.message);
+  },[data])
   const fetchNumber = (numberOfDogs) => {
-    const url = 'https://dog.ceo/api/breeds/image/random/' + numberOfDogs;
-    fetchData(url)
+    if(numberOfDogs <= 50){
+      setGreaterValue(false);
+      const api =  'https://dog.ceo/api/breeds/image/random'
+      const url = api + "/" + numberOfDogs;
+      fetchData(url);
+    } else{
+      setGreaterValue(true);
+    }
+    
+    
   }
   return (
     <>
@@ -18,7 +32,8 @@ const FetchDogs = () => {
         
       </div>
       <div class="m-8 shadow-xl">
-      <ImageList data={data}/>
+        {!greaterValue && <ImageList data={images}/>}
+        {greaterValue && <div>Max number returned is 50. More info <a href="https://github.com/ElliottLandsborough/dog-ceo-api/pull/3" class="text-blue-600">here.</a></div>}
       </div>
     </>
   );
