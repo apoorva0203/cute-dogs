@@ -1,3 +1,11 @@
+# Love for Dogs website
+
+This project is built on ReactJS, Tailwind Css, Zustand state management.
+
+There is a validation for dogs more than 50.
+
+I have not included any tests 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
