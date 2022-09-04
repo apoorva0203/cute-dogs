@@ -1,6 +1,6 @@
 import useStore from '../utils/store';
 
-import React, { useState } from "react";
+import React from "react";
 
 
 const ImageGrid =  ({  item, i }) => {
@@ -15,9 +15,9 @@ const ImageGrid =  ({  item, i }) => {
   }
   return (
     <>
-          <div  class="flex justify-center items-center">
-            <img alt={i} src={item} class="w-[15rem] h-[15rem] shadow-lg rounded-lg"></img>
-          </div>
+      <div  class="flex justify-center items-center">
+        <img alt={i} src={item} class="w-[15rem] h-[15rem] shadow-lg rounded-lg"></img>
+      </div>
     </>
   );
 };

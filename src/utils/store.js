@@ -9,10 +9,8 @@ const useStore = create((set) => ({
   fetch: async (url) => {
     set(() => ({ loading: true }));
     try {
-       
       const result = await axios.get(url).then(response => set((state) => ({ data: (state.data = response.data), loading: false })))
-      
-      
+      console.log(result)
     } catch (err) {
       set(() => ({ hasErrors: true, loading: false }));
     }

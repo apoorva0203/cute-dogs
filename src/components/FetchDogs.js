@@ -11,7 +11,8 @@ const FetchDogs = () => {
   
   useEffect(() => {
       setImages(data.message);
-  },[data])
+  },[data]);
+
   const fetchNumber = (numberOfDogs) => {
     if(numberOfDogs <= 50){
       setGreaterValue(false);
@@ -21,15 +22,12 @@ const FetchDogs = () => {
     } else{
       setGreaterValue(true);
     }
-    
-    
   }
+  
   return (
     <>
       <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white m-8 shadow-xl">
-       
         <CrudButton fetchNumber={fetchNumber}/>
-        
       </div>
       <div class="m-8 shadow-xl">
         {!greaterValue && <ImageList data={images}/>}
